@@ -1,0 +1,92 @@
+-- Ensure the 'patient' table exists
+CREATE TABLE IF NOT EXISTS patient
+(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    registration_date DATE NOT NULL
+);
+
+-- Insert sample patients
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'John Doe',
+       'john.doe@example.com',
+       '123 Main St, Springfield',
+       '1985-06-15',
+       '2024-01-10'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'john.doe@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Jane Smith',
+       'jane.smith@example.com',
+       '456 Elm St, Shelbyville',
+       '1990-09-23',
+       '2023-12-01'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'jane.smith@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Alice Johnson',
+       'alice.johnson@example.com',
+       '789 Oak St, Capital City',
+       '1978-03-12',
+       '2022-06-20'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'alice.johnson@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Bob Brown',
+       'bob.brown@example.com',
+       '321 Pine St, Springfield',
+       '1982-11-30',
+       '2023-05-14'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'bob.brown@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Emily Davis',
+       'emily.davis@example.com',
+       '654 Maple St, Shelbyville',
+       '1995-02-05',
+       '2024-03-01'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'emily.davis@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Michael Green',
+       'michael.green@example.com',
+       '987 Cedar St, Springfield',
+       '1988-07-25',
+       '2024-02-15'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'michael.green@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Sarah Taylor',
+       'sarah.taylor@example.com',
+       '123 Birch St, Shelbyville',
+       '1992-04-18',
+       '2023-08-25'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'sarah.taylor@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'David Wilson',
+       'david.wilson@example.com',
+       '456 Ash St, Capital City',
+       '1975-01-11',
+       '2022-10-10'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'david.wilson@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'Laura White',
+       'laura.white@example.com',
+       '789 Palm St, Springfield',
+       '1989-09-02',
+       '2024-04-20'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'laura.white@example.com');
+
+INSERT INTO patient (name, email, address, date_of_birth, registration_date)
+SELECT 'James Harris',
+       'james.harris@example.com',
+       '321 Cherry St, Shelbyville',
+       '1993-11-15',
+       '2023-06-30'
+WHERE NOT EXISTS (SELECT 1 FROM patient WHERE email = 'james.harris@example.com');
